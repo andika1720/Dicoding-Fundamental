@@ -53,16 +53,17 @@ class DetailActivity : AppCompatActivity() {
         }
         viewModel.detailUser.observe(this) {
             if (it != null) {
-                binding.tvNameuser.text = it.name
-                binding.tvUsernameDetail.text = it.login
-                binding.bio.text = it.bio.toString()
-                binding.tvFollowers.text = getString(R.string.followers_count, it.followers)
-                binding.tvFollowing.text = getString(R.string.following_count, it.following)
-                Glide.with(this@DetailActivity)
-                    .load(it.avatarUrl)
-                    .fitCenter()
-                    .into(binding.ivProfile)
-
+                binding.apply {
+                    tvNameuser.text = it.name
+                    tvUsernameDetail.text = it.login
+                    bio.text = it.bio.toString()
+                    tvFollowers.text = getString(R.string.followers_count, it.followers)
+                    tvFollowing.text = getString(R.string.following_count, it.following)
+                    Glide.with(this@DetailActivity)
+                        .load(it.avatarUrl)
+                        .fitCenter()
+                        .into(ivProfile)
+                }
 
                 userFavorite = Favorite(it.login, it.avatarUrl)
                 viewModel.isFavorite(userFavorite.username).observe(this) { it1 ->
@@ -82,14 +83,8 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun showLoading(isLoading: Boolean) {
-        if (isLoading){
-            binding.progressbarDetail.visibility = View.VISIBLE
-        }else {
-            binding.progressbarDetail.visibility = View.GONE
-        }
+    private fun showLoading(state: Boolean) { binding.progressbarDetail.visibility = if (state) View.VISIBLE else View.GONE }
 
-    }
 
     private fun setIsFavorite(favo: Boolean){
         binding.fabAddFavo.apply {

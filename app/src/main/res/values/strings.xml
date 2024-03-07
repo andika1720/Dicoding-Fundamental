@@ -26,4 +26,5 @@
     <string name="detail_user">Detail User</string>
     <string name="setting_theme">Setting Theme</string>
     <string name="favorite_users">Favorite User</string>
+    <string name="iv_profile">iv_profile</string>
 </resources>

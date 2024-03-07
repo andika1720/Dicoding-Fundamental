@@ -14,6 +14,7 @@
         android:layout_height="145dp"
         android:scaleType="centerCrop"
         android:layout_marginTop="30dp"
+        android:contentDescription="@string/iv_profile"
         android:src="@drawable/person"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
