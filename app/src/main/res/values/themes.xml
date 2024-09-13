@@ -1,15 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.SubmissionAkhir" parent="Theme.Material3.DayNight">
-        <!-- Customize your light theme here. -->
-        <item name="colorPrimary">#FEDBD0</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryContainer</item>
 
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!--Dibawah ini warna untuk title toolbar-->
+        <item name="colorOnSurface">@color/white</item>
+
+        <!--Dibawah ini style untuk warna background toolbar-->
+        <item name="toolbarStyle">@style/Theme.Custom.Toolbar</item>
 
     </style>
 
-
+    <style name="Theme.Custom.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">#FEDBD0</item>
+    </style>
 
 
 </resources>
